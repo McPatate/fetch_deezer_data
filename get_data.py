@@ -29,6 +29,7 @@ def process_playlist_data(batch):
     for playlist in batch:
         tracks = []
         title = playlist["title"].replace(" ", "_")
+        title = title.replace("/", "&")
         nb_tracks = playlist["nb_tracks"]
         tracklist = playlist["tracklist"]
         LOGGER.info(f"Treating {title} - {nb_tracks}")
